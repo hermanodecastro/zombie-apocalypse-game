@@ -121,8 +121,6 @@ int main()
         showWorld(world, lines, columns);
         printf(RESET_COLOR);
 
-        //char key = getchar();
-        //__fpurge(stdin);
         scanf(" %c", &key);
         
         switch (toupper(key))
