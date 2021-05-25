@@ -67,6 +67,7 @@ uint8_t exitIsBlocked(char **world, uint8_t lines, uint8_t columns);
 uint8_t *findRickPosition(char **world, uint8_t lines, uint8_t columns); 
 uint8_t isNotOffTheEdge(int8_t lines, int8_t columns, int8_t position, enum keyBoardArrow key);
 uint8_t zombieIsCloseToRick(uint8_t rickLine, uint8_t rickColumn, uint8_t zombieLine, uint8_t zombieColumn);
+void clear();
 void drawBulletPosition(char **world, uint8_t range);
 void drawCarPosition(char **world, uint8_t range);
 void drawExitPosition(char **world, uint8_t range);
@@ -116,7 +117,7 @@ int main()
     
     while(!finished)
     {  
-        system("clear");
+        clear();
         statistics();
         showWorld(world, lines, columns);
         printf(RESET_COLOR);
@@ -147,7 +148,7 @@ int main()
 
         if(GLOBAL_DEVORED_BY_ZOMBIE)
         {
-            system("clear");
+            clear();
             statistics();
             showWorld(world, lines, columns);
             printf(RED);
@@ -156,7 +157,7 @@ int main()
         }
         else if(GLOBAL_MANAGED_TO_ESCAPE)
         {
-            system("clear");
+            clear();
             statistics();
             showWorld(world, lines, columns);
             printf(WHITE);
@@ -401,6 +402,15 @@ uint8_t zombieIsCloseToRick(uint8_t rickLine, uint8_t rickColumn, uint8_t zombie
     return distanceToTarget(rickLine, rickColumn, zombieLine, zombieColumn) <= GLOBAL_MINIMUM_DISTANCE_TO_CHASE_RICK;
 }
 
+void clear()
+{
+    #ifdef __linux__
+        system("clear");
+    #else
+        system("cls");
+    #endif
+}
+
 void drawBulletPosition(char **world, uint8_t range)
 {
     uint8_t count = 0;
@@ -583,7 +593,7 @@ void makeMoviment(char **world, uint8_t lines, uint8_t columns, enum keyBoardArr
 
                 if(!GLOBAL_DEVORED_BY_ZOMBIE && !GLOBAL_MANAGED_TO_ESCAPE)
                 {
-                    system("clear");
+                    clear();
                     statistics();
                     showWorld(world, lines, columns);
                     printf(RESET_COLOR);
@@ -632,7 +642,7 @@ void makeMoviment(char **world, uint8_t lines, uint8_t columns, enum keyBoardArr
                 
                 if(!GLOBAL_DEVORED_BY_ZOMBIE && !GLOBAL_MANAGED_TO_ESCAPE)
                 {
-                    system("clear");
+                    clear();
                     statistics();
                     showWorld(world, lines, columns);
                     printf(RESET_COLOR);
@@ -681,7 +691,7 @@ void makeMoviment(char **world, uint8_t lines, uint8_t columns, enum keyBoardArr
                 
                 if(!GLOBAL_DEVORED_BY_ZOMBIE && !GLOBAL_MANAGED_TO_ESCAPE)
                 {
-                    system("clear");
+                    clear();
                     statistics();
                     showWorld(world, lines, columns);
                     printf(RESET_COLOR);
@@ -730,7 +740,7 @@ void makeMoviment(char **world, uint8_t lines, uint8_t columns, enum keyBoardArr
 
                 if(!GLOBAL_DEVORED_BY_ZOMBIE && !GLOBAL_MANAGED_TO_ESCAPE)
                 {
-                    system("clear");
+                    clear();
                     statistics();
                     showWorld(world, lines, columns);
                     printf(RESET_COLOR);
