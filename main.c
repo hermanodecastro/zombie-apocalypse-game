@@ -64,7 +64,8 @@ uint8_t *calculatesTheShortestPathToRick(char **world, uint8_t lines, uint8_t co
 uint8_t distanceToTarget(uint8_t selfLine, uint8_t selfColumn, uint8_t targetLine, uint8_t targetColumn);
 uint8_t drawPosition(uint8_t range);
 uint8_t exitIsBlocked(char **world, uint8_t lines, uint8_t columns);
-uint8_t *findRickPosition(char **world, uint8_t lines, uint8_t columns); 
+uint8_t *findRickPosition(char **world, uint8_t lines, uint8_t columns);
+uint8_t isNotAnObstacle(char **world, uint8_t line, uint8_t column); 
 uint8_t isNotOffTheEdge(int8_t lines, int8_t columns, int8_t position, enum keyBoardArrow key);
 uint8_t zombieIsCloseToRick(uint8_t rickLine, uint8_t rickColumn, uint8_t zombieLine, uint8_t zombieColumn);
 void clear();
@@ -374,6 +375,18 @@ uint8_t *findRickPosition(char **world, uint8_t lines, uint8_t columns)
     }
 }
 
+uint8_t isNotAnObstacle(char **world, uint8_t line, uint8_t column)
+{
+    if(world[line][column] != CAR && world[line][column] != STONE && world[line][column] != TREE)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
 uint8_t isNotOffTheEdge(int8_t lines, int8_t columns, int8_t position, enum keyBoardArrow key)
 {
     if(key == UP && position >= 0)
@@ -556,7 +569,7 @@ void makeMoviment(char **world, uint8_t lines, uint8_t columns, enum keyBoardArr
     switch (key)
     {
         case UP:
-            if(isNotOffTheEdge(lines, columns, (rickPosition[0] - 1), UP))
+            if(isNotOffTheEdge(lines, columns, (rickPosition[0] - 1), UP) && isNotAnObstacle(world, rickPosition[0] - 1, rickPosition[1]))
             {
                 if(world[rickPosition[0] - 1][rickPosition[1]] == EMPTY_SPACE)
                 {
@@ -605,7 +618,7 @@ void makeMoviment(char **world, uint8_t lines, uint8_t columns, enum keyBoardArr
             break;
 
         case DOWN:
-            if(isNotOffTheEdge(lines, columns, (rickPosition[0] + 1), DOWN))
+            if(isNotOffTheEdge(lines, columns, (rickPosition[0] + 1), DOWN) && isNotAnObstacle(world, rickPosition[0] + 1, rickPosition[1]))
             {
                  if(world[rickPosition[0] + 1][rickPosition[1]] == EMPTY_SPACE)
                 {
@@ -654,7 +667,7 @@ void makeMoviment(char **world, uint8_t lines, uint8_t columns, enum keyBoardArr
             break;
 
         case LEFT:
-            if(isNotOffTheEdge(lines, columns, (rickPosition[1] - 1), LEFT))
+            if(isNotOffTheEdge(lines, columns, (rickPosition[1] - 1), LEFT) && isNotAnObstacle(world, rickPosition[0], rickPosition[1] - 1))
             {
                  if(world[rickPosition[0]][rickPosition[1] - 1] == EMPTY_SPACE)
                 {
@@ -703,7 +716,7 @@ void makeMoviment(char **world, uint8_t lines, uint8_t columns, enum keyBoardArr
             break;
 
         case RIGHT:
-            if(isNotOffTheEdge(lines, columns, (rickPosition[1] + 1), RIGHT))
+            if(isNotOffTheEdge(lines, columns, (rickPosition[1] + 1), RIGHT) && isNotAnObstacle(world, rickPosition[0], rickPosition[1] + 1))
             {
                 if(world[rickPosition[0]][rickPosition[1] + 1] == EMPTY_SPACE)
                 {
