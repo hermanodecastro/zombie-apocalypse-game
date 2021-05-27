@@ -2,7 +2,7 @@
 
 This game was inspired by The Walking Dead
 
-# The game
+## The game
 
 1 - Rick wakes up stunned in some random place on the scene, with a gun without bullets. (Color White)
 
@@ -22,3 +22,12 @@ attacked and dies; otherwise, Rick uses the bullet on the zombie.
 
 7 - Zombies have 4 possible movements: up, down, left and right. The zombies that are 3 square meters away
 Rick will chase him. Those who are farthest away will stand still.
+
+## Playing
+
+- Directional buttons
+
+- UP:     w
+- Down:   s
+- Left:   a
+- Right:  d 
