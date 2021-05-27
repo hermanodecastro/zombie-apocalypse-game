@@ -26,8 +26,8 @@ Rick will chase him. Those who are farthest away will stand still.
 ## Directional keys
 
 - UP:     w
-- Down:   s
-- Left:   a
-- Right:  d 
+- DOWN:   s
+- LEFT:   a
+- RIGHT:  d 
 
 Press enter after pressing a directional key.
