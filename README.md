@@ -2,6 +2,9 @@
 
 This game was inspired by The Walking Dead
 
+![image](https://user-images.githubusercontent.com/45005417/119849142-c1e79c80-bee2-11eb-9a2b-c360d572d411.png)
+
+
 ## The game
 
 1 - Rick wakes up stunned in some random place on the scene, with a gun without bullets. (Color White)
