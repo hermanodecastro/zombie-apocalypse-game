@@ -23,11 +23,11 @@ attacked and dies; otherwise, Rick uses the bullet on the zombie.
 7 - Zombies have 4 possible movements: up, down, left and right. The zombies that are 3 square meters away
 Rick will chase him. Those who are farthest away will stand still.
 
-## Playing
-
-- Directional buttons
+## Directional keys
 
 - UP:     w
 - Down:   s
 - Left:   a
 - Right:  d 
+
+Press enter after pressing a directional key.
