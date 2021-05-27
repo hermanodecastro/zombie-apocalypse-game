@@ -122,6 +122,7 @@ int main()
         showWorld(world, lines, columns);
         printf(RESET_COLOR);
 
+        printf("\t\t\t\t\t\t\t\t\tMoviment: ");
         scanf(" %c", &key);
         
         switch (toupper(key))
@@ -152,7 +153,7 @@ int main()
             statistics();
             showWorld(world, lines, columns);
             printf(RED);
-            printf("You was devored by the zombies\n");
+            printf("\t\t\t\t\t\t\t\t\tYou was devored by the zombies\n\n");
             finished = 1;
         }
         else if(GLOBAL_MANAGED_TO_ESCAPE)
@@ -161,7 +162,7 @@ int main()
             statistics();
             showWorld(world, lines, columns);
             printf(WHITE);
-            printf("Wow!! You managed to escape\n");
+            printf("\t\t\t\t\t\t\t\t\tWow!! You managed to escape\n\n");
             finished = 1;
         }
     }
@@ -772,6 +773,8 @@ void showWorld(char **world, uint8_t lines, uint8_t columns)
 {
     for(uint8_t i = 0; i < lines; i++)
     {
+        printf("\t\t\t\t\t\t\t\t\t");
+        
         for(uint8_t j = 0; j < columns; j++)
         {
             if(world[i][j] == RICK)
@@ -816,8 +819,8 @@ void showWorld(char **world, uint8_t lines, uint8_t columns)
 
 void statistics()
 {
-    printf("Zombies left: %u\n", GLOBAL_ZOMBIES_LEFT);
-    printf("Bullet amount: %u\n\n", GLOBAL_BULLETS_AMOUNT);
+    printf("\n\n\n\t\t\t\t\t\t\t\t\tZombies left: %u\n", GLOBAL_ZOMBIES_LEFT);
+    printf("\t\t\t\t\t\t\t\t\tBullet amount: %u\n\n", GLOBAL_BULLETS_AMOUNT);
 }
 
 void zombieMoviment(char **world, uint8_t lines, uint8_t columns)
