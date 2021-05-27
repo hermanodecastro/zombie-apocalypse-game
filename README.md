@@ -1,4 +1,4 @@
-# zombie-apocalypse-game
+# Zombie Apocalypse
 
 This game was inspired by The Walking Dead
 
