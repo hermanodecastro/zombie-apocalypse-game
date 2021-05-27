@@ -2,7 +2,7 @@
 
 This game was inspired by The Walking Dead
 
-![image](https://user-images.githubusercontent.com/45005417/119849142-c1e79c80-bee2-11eb-9a2b-c360d572d411.png)
+![image](https://user-images.githubusercontent.com/45005417/119849759-46d2b600-bee3-11eb-9de3-d0e6e125d88d.png)
 
 
 ## The game
