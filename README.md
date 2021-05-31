@@ -4,6 +4,14 @@ This game was inspired by The Walking Dead
 
 ![image](https://user-images.githubusercontent.com/45005417/119849759-46d2b600-bee3-11eb-9de3-d0e6e125d88d.png)
 
+## Quickstart
+1. Clone this repository to your local.
+> `https://github.com/hermanodecastro/zombie-apocalypse-game.git`
+
+2. On Linux `gcc main.c -o main -lm` to compile the application.
+
+3. On windows `gcc main.c -o main` to compile the application.
+
 
 ## The game
 
