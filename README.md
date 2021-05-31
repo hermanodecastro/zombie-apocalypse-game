@@ -10,7 +10,7 @@ This game was inspired by The Walking Dead
 
 2. On Linux `gcc main.c -o main -lm` to compile the application.
 
-3. On windows `gcc main.c -o main` to compile the application.
+3. On Windows `gcc main.c -o main` to compile the application.
 
 
 ## The game
