@@ -89,6 +89,30 @@ void testZombieIsCloseToRickShouldReturnTrue();
 void testZombieIsCloseToRickShouldReturnFalse();
 void zombieMoviment(char **world, uint8_t lines, uint8_t columns);
 
+// Movement function
+void movement(key){
+    switch (capt_key)
+        {
+            case UP:
+                makeMoviment(world, lines, columns, UP);
+                break;
+
+            case DOWN:
+                makeMoviment(world, lines, columns, DOWN);
+                break;
+
+            case LEFT:
+                makeMoviment(world, lines, columns, LEFT);
+                break;
+
+            case RIGHT:
+                makeMoviment(world, lines, columns, RIGHT);
+                break;
+            
+            default:
+                break;
+        }
+}
 
 int main() 
 {   
@@ -124,28 +148,13 @@ int main()
 
         printf("\t\t\t\t\t\t\t\t\tMoviment: ");
         scanf(" %c", &key);
-        
-        switch (toupper(key))
-        {
-            case UP:
-                makeMoviment(world, lines, columns, UP);
-                break;
 
-            case DOWN:
-                makeMoviment(world, lines, columns, DOWN);
-                break;
+        char capt_key;
+        // Capital key
+        capt_key = toupper(key);
 
-            case LEFT:
-                makeMoviment(world, lines, columns, LEFT);
-                break;
-
-            case RIGHT:
-                makeMoviment(world, lines, columns, RIGHT);
-                break;
-            
-            default:
-                break;
-        }
+        // Função de movimento
+        movimento(capt_key);
 
         if(GLOBAL_DEVORED_BY_ZOMBIE)
         {
